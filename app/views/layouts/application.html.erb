@@ -10,10 +10,26 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="position-relative">
     <%= render 'layouts/header' %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+    <% if notice != nil %>
+    <div class="row position-absolute my-3 w-100" style="z-index: 1">
+      <div class="col-4"></div>
+      <div class="col-4 alert alert-success p-1 text-center start-0 end-0 mx-0" role="alert">
+        <%= notice %>
+      </div>
+    <div class="col-4"></div>
+    </div>
+    <% end %>
+    <% if alert != nil %>
+    <div class="row position-absolute w-100 my-2">
+    <div class="col-4"></div>
+      <div class="alert alert-danger p-1 text-center position-absolute start-0 end-0 mx-0 w-25" role="alert">
+        <%= alert %>
+      </div>
+      <div class="col-4"></div>
+    </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
