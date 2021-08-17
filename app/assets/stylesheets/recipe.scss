@@ -1,6 +1,7 @@
-// Place all the styles related to the post controller here.
+// Place all the styles related to the recipe controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
 
 .cover {
   object-fit: cover;
@@ -8,13 +9,17 @@
   object-position: top;
 }
 
-.img-text {
+.img-top {
+  top: 5vh;
+  left: 5vh;
+}
+
+.img-bottom {
   bottom: 5vh;
   left:  5vh;
 }
 
 .img-cover {
   background: linear-gradient(to top, black, transparent);
-  z-index: 2;
   background-size: 100% 100%;
 }
