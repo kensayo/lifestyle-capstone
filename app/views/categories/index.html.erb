@@ -1,6 +1,6 @@
 <div class="row g-0 position-relative">
   <div class="img-cover position-absolute h-100 w-100"></div>
-  <%= image_tag Recipe.all.last.image, class: "img-fluid cover"%>
+  <%= image_tag Category.first.recipes.last.image, class: "img-fluid cover"%>
   <div class="w-100 h-100 position-relative img-cover">
     <div class="position-absolute img-bottom">
       <a href="#" class="text-decoration-none"><h1 class="text-warning fw-bold ">Lorem Ipsun</h1></a>
@@ -14,10 +14,10 @@
   <div class="col position-relative">
     <div class="img-cover position-absolute h-100 w-100"></div>
     <%= image_tag 'posts/chocolate-cake.jpg', class: "img-fluid cover h-100" %>
-      <div class="position-absolute img-bottom">
-        <h1 class="text-warning fw-bold">Cakes</h1>
-        <p class="text-light">Lorem Ipsun</p>
-      </div>
+    <div class="position-absolute img-bottom">
+      <h1 class="text-warning fw-bold">Cakes</h1>
+      <p class="text-light">Lorem Ipsun</p>
+    </div>
   </div>
   <div class="col position-relative">
     <div class="img-cover position-absolute h-100 w-100"></div>
@@ -37,7 +37,7 @@
   </div>
   <div class="col position-relative">
     <div class="img-cover position-absolute h-100 w-100"></div>
-    <%= image_tag Recipe.all.last.image, class: "img-fluid cover h-100" %>
+    <%= image_tag 'posts/fondant.jpg', class: "img-fluid cover h-100" %>
     <div class="position-absolute img-bottom">
       <h1 class="text-warning fw-bold">Fondant</h1>
       <p class="text-light">Lorem Ipsun</p>
