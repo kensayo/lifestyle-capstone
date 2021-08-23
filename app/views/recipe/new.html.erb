@@ -16,7 +16,7 @@
   </p>
   <p>
     <%= f.label :category_id %>
-    <%= f.text_area :category_id, class: 'form-control' %>
+    <%= select_tag :category_id, options_for_select(Category.names), class: 'form-control' %>
   </p>
   <p>
     <% if @recipe.image.attached? %>

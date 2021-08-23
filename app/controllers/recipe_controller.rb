@@ -7,7 +7,7 @@ class RecipeController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
-    @recipe.category_id = 1
+    @recipe.category_id = Category.find_by(name: params[:category_id]).id
     if @recipe.save
       redirect_to recipe_path(@recipe)
     else
@@ -26,6 +26,6 @@ class RecipeController < ApplicationController
 
   private
   def recipe_params
-      params.require(:recipe).permit(:title, :content, :image)
+      params.require(:recipe).permit(:title, :content, :image, :category_id)
   end
 end

@@ -4,6 +4,10 @@ class CategoriesController < ApplicationController
 
   end
 
+  def new
+    @recipe = Recipe.new
+  end
+
   def show
     @category = Category.find(params[:id])
   end
