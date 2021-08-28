@@ -21,7 +21,7 @@ class RecipeController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.last
+    @recipe = Recipe.find(params[:id])
   end
 
   private

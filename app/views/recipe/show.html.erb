@@ -1,1 +1,10 @@
-<h1> <%= @recipe.title %></h1>
+<div class="row g-0 h-87" >
+  <div class="col">
+    <%= image_tag @recipe.image, class: "w-100 object-fit-cover h-87" %>
+  </div>
+  <div class="col p-4 h-87 content">
+    <h5 class="text-warning fw-bold border-bottom border-3 w-fit-content border-warning"><%= @recipe.category.name %></h5>
+    <h1> <%= @recipe.title %></h1>
+    <p> <%= @recipe.content %></p>
+  </div>
+</div>

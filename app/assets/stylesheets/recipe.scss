@@ -10,16 +10,25 @@
 }
 
 .img-top {
-  top: 5vh;
-  left: 5vh;
+  top: 3vh;
+  left: 3vh;
 }
 
 .img-bottom {
-  bottom: 5vh;
-  left:  5vh;
+  bottom: 3vh;
+  left:  3vh;
 }
 
 .img-cover {
   background: linear-gradient(to top, black, transparent);
   background-size: 100% 100%;
+}
+
+.grid-img {
+  height: 25vw;
+}
+
+.content {
+  overflow: auto;
+  scrollbar-width: thin;
 }

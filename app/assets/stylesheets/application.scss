@@ -17,4 +17,22 @@
 
 footer {
   background: orange;
+  bottom: 0;
+  height: 5vh;
+}
+
+.w-fit-content {
+  width: fit-content;
+}
+
+nav {
+  height: 7vh;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.h-87 {
+  height: 88vh;
 }

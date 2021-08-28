@@ -11,36 +11,14 @@
 </div>
 
 <div class="row g-0">
+  <% @category.each do |category| %>
   <div class="col position-relative">
     <div class="img-cover position-absolute h-100 w-100"></div>
-    <%= image_tag 'posts/chocolate-cake.jpg', class: "img-fluid cover h-100" %>
+    <%= image_tag category.recipes.last.image, class: "img-fluid cover h-100" %>
     <div class="position-absolute img-bottom">
-      <h1 class="text-warning fw-bold">Cakes</h1>
-      <p class="text-light">Lorem Ipsun</p>
+      <h1 class="text-warning fw-bold"><%= category.name %></h1>
+      <p class="text-light"><%= truncate(category.recipes.last.title, length: 100, separator: ' ') %></p>
     </div>
   </div>
-  <div class="col position-relative">
-    <div class="img-cover position-absolute h-100 w-100"></div>
-    <%= image_tag 'posts/cupcake.jpg', class: "img-fluid cover h-100" %>
-    <div class="position-absolute img-bottom">
-      <h1 class="text-warning fw-bold">Cupcake</h1>
-      <p class="text-light">Lorem Ipsun</p>
-    </div>
-  </div>
-  <div class="col position-relative">
-    <div class="img-cover position-absolute h-100 w-100"></div>
-    <%= image_tag 'posts/chocolate.jpg', class: "img-fluid cover h-100" %>
-    <div class="position-absolute img-bottom">
-      <h1 class="text-warning fw-bold">Chocolate</h1>
-      <p class="text-light">Lorem Ipsun</p>
-    </div>
-  </div>
-  <div class="col position-relative">
-    <div class="img-cover position-absolute h-100 w-100"></div>
-    <%= image_tag 'posts/fondant.jpg', class: "img-fluid cover h-100" %>
-    <div class="position-absolute img-bottom">
-      <h1 class="text-warning fw-bold">Fondant</h1>
-      <p class="text-light">Lorem Ipsun</p>
-    </div>
-  </div>
+  <% end %>
 </div>
