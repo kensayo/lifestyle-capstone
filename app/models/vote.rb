@@ -4,10 +4,8 @@ class Vote < ApplicationRecord
 
   validates :user_id, uniqueness: {scope: :recipe_id, message: 'Already voted'}
 
-  def self.exist?(user, recipe)
-    if Vote.find_by(user_id:user).recipe_id == recipe
-      return true
-    end
-    false
+  def self.most_voted
+    recipe = Vote.select(:recipe_id).group(:recipe_id).count.max_by{|k,v| v}
+    recipe == nil ? 1 : recipe[0]
   end
 end
