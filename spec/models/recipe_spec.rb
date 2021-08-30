@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
-
   before :context do
     @user = User.create email: 'test@test.com', password: '123456'
     @user.save
