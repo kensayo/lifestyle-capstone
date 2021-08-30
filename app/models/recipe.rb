@@ -14,4 +14,10 @@ class Recipe < ApplicationRecord
     end
     p recipe
   end
+
+  def empty?
+    if true
+
+    end
+  end
 end

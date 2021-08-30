@@ -1,4 +1,4 @@
-<div class="h-87">
+<div class="h-87" style="overflow: auto">
   <% if @category.count != 0 %>
     <% @category.each_slice(2).with_index do |(first, second), i| %>
       <% if i%2 == 0 %>
