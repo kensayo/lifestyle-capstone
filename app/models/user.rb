@@ -7,6 +7,6 @@ class User < ApplicationRecord
   has_one :vote
 
   def name
-    self.email[0..self.email.index('@')-1]
+    email[0..email.index('@') - 1]
   end
 end

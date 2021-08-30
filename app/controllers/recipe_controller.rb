@@ -1,5 +1,5 @@
 class RecipeController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :update]
+  before_action :authenticate_user!, only: %i[new create update]
   def new
     @recipe = Recipe.new
   end
@@ -25,7 +25,8 @@ class RecipeController < ApplicationController
   end
 
   private
+
   def recipe_params
-      params.require(:recipe).permit(:title, :content, :image, :category_id)
+    params.require(:recipe).permit(:title, :content, :image, :category_id)
   end
 end

@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-
   before_action :authenticate_user!, only: [:show]
 
   def index
@@ -14,5 +13,4 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id]).recipes.order('created_at DESC')
   end
-
 end
