@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!, only: [:show]
 
   def index
-    @category = Category.all.order('priority ASC')
+    @category = Category.all.order('priority ASC').limit(4)
     @header = Recipe.find(Vote.most_voted) unless Recipe.all.empty?
   end
 
