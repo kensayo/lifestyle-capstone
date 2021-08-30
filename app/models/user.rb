@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :recipes
   has_one :vote
+
+  def name
+    self.email[0..self.email.index('@')-1]
+  end
 end

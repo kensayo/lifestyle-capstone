@@ -1,6 +1,6 @@
 <div class="h-87">
-  <% if @category.recipes.count != 0 %>
-    <% @category.recipes.each_slice(2).with_index do |(first, second), i| %>
+  <% if @category.count != 0 %>
+    <% @category.each_slice(2).with_index do |(first, second), i| %>
       <% if i%2 == 0 %>
         <div class="row g-0">
           <div class="col-3 position-relative grid-img">
@@ -9,11 +9,14 @@
           </div>
           <div class="col-3 position-relative">
             <div class="position-absolute p-3 h-100">
-              <h5 class="text-warning fw-bold border-bottom border-3 w-fit-content border-warning"><%= @category.name %></h5>
+              <div class="d-flex justify-content-between align-items-center">
+              <%= link_to first.category.name + " by " + first.user.name, recipe_path(first), class: 'text-capitalize fs-2 text-decoration-none mb-2 text-warning fw-bold border-bottom border-3 w-fit-content border-warning' %>
+              <%= button_to 'Vote', recipe_vote_path(first), class: 'btn btn-warning fw-bold text-light py-1 px-2 mx-3' %>
+              </div>
               <h3 class="text-dark"> <%= first.title %> </h3>
               <p class="block-with-text"><%=  truncate(first.content, length: 280, separator: ' ')  %></p>
             </div>
-            <%= link_to 'Read more...', recipe_path(first), class: 'position-absolute m-3 text-decoration-none text-warning fw-bold bottom-0' %>
+
           </div>
           <% if second != nil %>
             <div class="col-3 position-relative grid-img">
@@ -22,11 +25,14 @@
             </div>
             <div class="col-3 position-relative">
               <div class="position-absolute p-3 h-100">
-                <h5 class="text-warning fw-bold border-bottom border-3 w-fit-content border-warning"><%= @category.name %></h5>
+                <div class="d-flex justify-content-between align-items-center">
+                <%= link_to second.category.name + " by " + second.user.name, recipe_path(second), class: 'text-capitalize fs-2 text-decoration-none mb-2 text-warning fw-bold border-bottom border-3 w-fit-content border-warning' %>
+                <%= button_to 'Vote', recipe_vote_path(second), class: 'btn btn-warning fw-bold text-light py-1 px-2 mx-3' %>
+                </div>
                 <h3 class="text-dark"> <%= second.title %> </h3>
                 <p class="block-with-text"><%=  truncate(second.content, length: 280, separator: ' ')  %></p>
               </div>
-              <%= link_to 'Read more...', recipe_path(second), class: 'position-absolute m-3 text-decoration-none text-warning fw-bold bottom-0' %>
+
             </div>
             <% end %>
         </div>
@@ -34,11 +40,14 @@
         <div class="row g-0">
           <div class="col-3 position-relative">
             <div class="position-absolute p-3 h-100">
-              <h5 class="text-warning fw-bold border-bottom border-3 w-fit-content border-warning"><%= @category.name %></h5>
+              <div class="d-flex justify-content-between align-items-center">
+              <%= link_to first.category.name + " by " + first.user.name, recipe_path(first), class: 'text-capitalize fs-2 text-decoration-none mb-2 text-warning fw-bold border-bottom border-3 w-fit-content border-warning' %>
+              <%= button_to 'Vote', recipe_vote_path(first), class: 'btn btn-warning fw-bold text-light py-1 px-2 mx-3' %>
+              </div>
               <h3 class="text-dark"> <%= first.title %> </h3>
               <p class="block-with-text"><%=  truncate(first.content, length: 280, separator: ' ')  %></p>
             </div>
-            <%= link_to 'Read more...', recipe_path(first), class: 'position-absolute m-3 text-decoration-none text-warning fw-bold bottom-0' %>
+
           </div>
           <div class="col-3 position-relative grid-img">
             <div class="img-cover position-absolute h-100 w-100"></div>
@@ -47,11 +56,14 @@
           <% if second != nil %>
             <div class="col-3 position-relative">
               <div class="position-absolute p-3 h-100">
-                <h5 class="text-warning fw-bold border-bottom border-3 w-fit-content border-warning"><%= @category.name %></h5>
+                <div class="d-flex justify-content-between align-items-center">
+                <%= link_to second.category.name + " by " + second.user.name, recipe_path(second), class: 'text-capitalize fs-2 text-decoration-none mb-2 text-warning fw-bold border-bottom border-3 w-fit-content border-warning' %>
+                <%= button_to 'Vote', recipe_vote_path(second), class: 'btn btn-warning fw-bold text-light py-1 px-2 mx-3' %>
+                </div>
                 <h3 class="text-dark"> <%= second.title %> </h3>
                 <p class="block-with-text"><%=  truncate(second.content, length: 280, separator: ' ')  %></p>
               </div>
-              <%= link_to 'Read more...', recipe_path(second), class: 'position-absolute m-3 text-decoration-none text-warning fw-bold bottom-0' %>
+
             </div>
             <div class="col-3 position-relative grid-img">
               <div class="img-cover position-absolute h-100 w-100"></div>

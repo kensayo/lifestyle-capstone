@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!, only: [:show]
 
   def index
-    @category = Category.all
+    @category = Category.all.order('priority ASC')
     @header = Recipe.find(Vote.most_voted)
   end
 
@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
+    @category = Category.find(params[:id]).recipes.order('created_at DESC')
   end
 
 end
