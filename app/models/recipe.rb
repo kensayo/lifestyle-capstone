@@ -12,12 +12,6 @@ class Recipe < ApplicationRecord
     Category.all.each do |last|
       recipe.append last.recipes.last
     end
-    p recipe
-  end
-
-  def empty?
-    if true
-
-    end
+    recipe
   end
 end

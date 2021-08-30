@@ -3,9 +3,7 @@ class CategoriesController < ApplicationController
 
   def index
     @category = Category.all.order('priority ASC')
-    if !Recipe.all.empty?
-      @header = Recipe.find(Vote.most_voted)
-    end
+    @header = Recipe.find(Vote.most_voted) unless Recipe.all.empty?
   end
 
   def new
