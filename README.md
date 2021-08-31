@@ -41,7 +41,7 @@
 
 ### 🌐 Live view
 
-> [Sweet World - To make the world sweeter](https://stormy-wildwood-17400.herokuapp.com/)
+> [Sweet World - To make the world sweeter](https://capstone-rails-kenny.herokuapp.com/)
 
 ## 🚩 Getting Started
 
@@ -58,6 +58,7 @@ To get a local copy up and running follow these simple example steps.
 ### 👨🏻‍🔧 Setup
 
 - Open your terminal and move to the root of the project, using ```cd``` command.
+- First run ```$ rails webpacker:install```
 - You must run ```$ bundle install```
 - Then you must run ```$ rails db:create db:migrate```, so you can work locally with the database.
 - Start server using ```$ rails s```
