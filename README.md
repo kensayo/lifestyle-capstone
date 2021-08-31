@@ -59,7 +59,7 @@ To get a local copy up and running follow these simple example steps.
 
 - Open your terminal and move to the root of the project, using ```cd``` command.
 - You must run ```$ bundle install```
-- Then you must run ```$ rails db:migrate```, so you can work locally with the database.
+- Then you must run ```$ rails db:create db:migrate```, so you can work locally with the database.
 - Start server using ```$ rails s```
 
 ### 🔌 Usage
@@ -78,7 +78,7 @@ To get a local copy up and running follow these simple example steps.
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/kennyortega/)
 
 
-### Contributions and issues are welcome!
+### 🤝🏻 Contributions and issues are welcome!
 
 License
-This project is MIT licensed.
+This project is [MIT](./MIT.md) licensed.

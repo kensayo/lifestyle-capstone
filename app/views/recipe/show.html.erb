@@ -6,7 +6,7 @@
     <h5 class="text-warning fw-bold border-bottom border-3 w-fit-content border-warning"><%= @recipe.category.name %></h5>
     <h1> <%= @recipe.title %></h1>
     <div class="d-flex flex-row justify-content-end align-items-center my-3">
-      <%= button_to 'Vote', recipe_vote_path(@recipe), class: 'btn btn-warning fw-bold text-light py-1 px-2 mx-3' %>
+      <%= button_to "Vote " + @recipe.vote.number_votes , recipe_vote_path(@recipe), class: 'btn btn-warning fw-bold text-light py-1 px-2 mx-3' %>
       <%= @recipe.created_at.strftime("%A, %d %b %Y")%>
     </div>
     <p> <%= @recipe.content %></p>

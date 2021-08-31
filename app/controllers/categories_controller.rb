@@ -7,10 +7,25 @@ class CategoriesController < ApplicationController
   end
 
   def new
-    @recipe = Recipe.new
+    @category = Category.new
+  end
+
+  def create
+    @category = Category.new(category_params)
+    if @category.save
+      redirect_to new_recipe_path
+    else
+      render 'new'
+    end
   end
 
   def show
     @category = Category.find(params[:id]).recipes.order('created_at DESC')
+  end
+
+  private
+
+  def category_params
+    params.require(:category).permit(:name, :priority)
   end
 end

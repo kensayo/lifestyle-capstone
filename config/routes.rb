@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :recipe, only: %i[create new show] do
     post '/vote', to: 'votes#vote'
   end
-  resources :categories, only: %i[index show]
+  resources :categories, only: %i[index new show]
+  post '/categories/new', to: 'categories#create', as: 'create_category'
 end

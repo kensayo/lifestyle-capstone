@@ -14,17 +14,19 @@
 
   <div class="row g-0">
     <% @category.each do |category| %>
-      <div class="col position-relative">
-        <div class="img-cover position-absolute h-100 w-100"></div>
-        <%= image_tag category.recipes.last.image, class: "img-fluid cover h-100" %>
-        <div class="position-absolute img-top">
-          <%= link_to category.name, category_path(category), class: 'text-light py-1 ps-4 pe-3 text-decoration-none fw-bold fs-2' %>
+      <% if !category.recipes.empty? %>
+        <div class="col position-relative">
+          <div class="img-cover position-absolute h-100 w-100"></div>
+          <%= image_tag category.recipes.last.image, class: "img-fluid cover h-100" %>
+          <div class="position-absolute img-top">
+            <%= link_to category.name, category_path(category), class: 'text-light py-1 ps-4 pe-3 text-decoration-none fw-bold fs-2' %>
+          </div>
+          <div class="position-absolute img-bottom">
+          <h5 class="text-light"><%= truncate(category.recipes.last.title, length: 100, separator: ' ') %></h5>
+          <%= link_to "Read Mode", recipe_path(category.recipes.last), class: "text-warning text-decoration-none" %>
         </div>
-        <div class="position-absolute img-bottom">
-        <h5 class="text-light"><%= truncate(category.recipes.last.title, length: 100, separator: ' ') %></h5>
-        <%= link_to "Read Mode", recipe_path(category.recipes.last), class: "text-warning text-decoration-none" %>
-      </div>
-      </div>
+        </div>
+        <% end %>
       <% end %>
   </div>
 <% else %>
