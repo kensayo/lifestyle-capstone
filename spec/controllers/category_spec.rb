@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+# rubocop:disable Metrics/BlockLength
 RSpec.feature 'Category', type: :feature do
   before(:each) do
     visit new_user_registration_url
@@ -38,3 +38,4 @@ RSpec.feature 'Category', type: :feature do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+# rubocop:disable Metrics/BlockLength
 RSpec.feature 'Recipe', type: :feature do
   before(:each) do
     visit new_user_registration_url
@@ -37,3 +37,4 @@ RSpec.feature 'Recipe', type: :feature do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
