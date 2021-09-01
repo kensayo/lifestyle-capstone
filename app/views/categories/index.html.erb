@@ -1,0 +1,36 @@
+
+<% if Recipe.all.count > 3 %>
+  <div class="row g-0 position-relative">
+    <div class="img-cover position-absolute h-100 w-100"></div>
+      <%= image_tag @header.image, class: "img-fluid cover"%>
+      <div class="w-100 h-100 position-relative img-cover">
+        <div class="position-absolute img-bottom">
+          <%= link_to @header.title, recipe_path(@header), class: 'text-decoration-none text-warning fw-bold fs-1' %>
+          <p class="text-light"><%= truncate(@header.content, length: 250, separator: ' ') %></p>
+          <%= link_to "Read Mode", recipe_path(@header), class: "text-warning text-decoration-none" %>
+        </div>
+      </div>
+  </div>
+
+  <div class="row g-0">
+    <% @category.each do |category| %>
+      <% if !category.recipes.empty? %>
+        <div class="col position-relative">
+          <div class="img-cover position-absolute h-100 w-100"></div>
+          <%= image_tag category.recipes.last.image, class: "img-fluid cover h-100" %>
+          <div class="position-absolute img-top">
+            <%= link_to category.name, category_path(category), class: 'text-light py-1 ps-4 pe-3 text-decoration-none fw-bold fs-2' %>
+          </div>
+          <div class="position-absolute img-bottom">
+          <h5 class="text-light"><%= truncate(category.recipes.last.title, length: 100, separator: ' ') %></h5>
+          <%= link_to "Read Mode", recipe_path(category.recipes.last), class: "text-warning text-decoration-none" %>
+        </div>
+        </div>
+        <% end %>
+      <% end %>
+  </div>
+<% else %>
+  <div class="h-87 d-flex justify-content-center align-items-center">
+    <h1 class="text-warning fw-light fst-italic">Add at least one recipe on each category</h1>
+  </div>
+<% end %>

@@ -2,8 +2,8 @@
 
 one:
   user: one
-  category: one
+  recipe: one
 
 two:
   user: two
-  category: two
+  recipe: two

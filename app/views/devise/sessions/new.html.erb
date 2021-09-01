@@ -1,0 +1,27 @@
+<div class="row g-0 h-87" >
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="card" style="width: 25rem">
+      <%= image_tag 'resources/header_sign_up.jpg', class: 'card-img-top', alt: 'Cake' %>
+      <div class="card-body">
+        <h2 class="card-title fw-bold text-warning text-center">Sign In</h2>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field my-3">
+            <%= f.label :email %><br />
+            <%= f.text_field :email, autofocus: true, autocomplete: "email", class: 'w-100' %>
+          </div>
+
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autofocus: true, autocomplete: "password", class: 'w-100' %>
+          </div>
+
+          <div class="actions d-flex justify-content-center my-3">
+            <%= f.submit "Sign In", class: 'btn btn-warning w-50' %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+

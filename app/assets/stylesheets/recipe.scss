@@ -1,0 +1,28 @@
+// Place all the styles related to the recipe controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.cover {
+  object-fit: cover;
+  max-height: 90vh;
+  object-position: top;
+}
+
+.img-bottom {
+  bottom: 3vh;
+  left: 3vh;
+}
+
+.img-cover {
+  background: linear-gradient(to top, black, transparent);
+  background-size: 100% 100%;
+}
+
+.grid-img {
+  height: 25vw;
+}
+
+.content {
+  overflow: auto;
+  scrollbar-width: thin;
+}

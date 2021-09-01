@@ -1,0 +1,45 @@
+<div class="h-87 d-flex justify-content-center align-items-center content">
+  <div class="card" style="width: 60vw; max-height: 70vh">
+    <div class="card-header">
+      <h2 class="card-title fw-bold text-warning text-center">New Recipe</h2>
+    </div>
+    <div class="card-body">
+      <%= form_for :recipe, url: recipe_index_path do |f| %>
+        <% if @recipe.errors.any? %>
+          <% @recipe.errors.full_messages.each do |msg| %>
+            <div class="alert alert-danger"><%= msg %></div>
+          <% end %>
+        <% end %>
+        <div class="my-3">
+          <%= f.label :title, class: 'form-label'%>
+          <%= f.text_field :title, class: 'form-control' %>
+        </div>
+
+        <div class="my-3">
+          <%= f.label :content, class: 'form-label'%>
+          <%= f.text_area :content, class: 'form-control', style: 'height:20vh; resize:none' %>
+        </div>
+        <div class="my-3 d-flex justify-content-between align-items-center">
+          <div class="w-100 me-1">
+            <%= f.label :category_id, class: 'form-label'%>
+            <%= select_tag :category_id, options_for_select(Category.names), class: 'form-select form-control' %>
+          </div >
+          <div class="w-100 ms-1">
+            <%= f.label 'Create your own category', class: 'form-label'%>
+            <%= link_to 'New Category', new_category_path, class: 'form-control btn btn-warning w-100' %>
+          </div>
+        </div>
+        <div class="my-3">
+          <% if @recipe.image.attached? %>
+            <%= image_tag @recipe.image, style: "width: 200px; display:block" %>
+          <% end %>
+          <%= f.label :image, class: 'form-label' %>
+          <%= f.file_field :image, class: 'form-control' %>
+        </div>
+        <div class="actions d-flex justify-content-center my-4">
+          <%= f.submit "Publish Recipe", class: 'btn btn-warning w-50' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

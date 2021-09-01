@@ -9,10 +9,27 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+    <%= render 'layouts/header' %>
+    <% if notice != nil %>
+    <div id="alert" class="row position-absolute my-3 w-100" style="z-index: 1">
+      <div class="col-4"></div>
+      <div class="col-4 alert alert-success p-1 text-center start-0 end-0 mx-0" role="notice">
+        <%= notice %>
+      </div>
+    <div class="col-4"></div>
+    </div>
+    <% end %>
+    <% if alert != nil %>
+    <div id="alert" class="row position-absolute my-3 w-100" style="z-index: 1">
+      <div class="col-4"></div>
+      <div class="col-4 alert alert-danger p-1 text-center start-0 end-0 mx-0" role="alert">
+        <%= alert %>
+      </div>
+      <div class="col-4"></div>
+    </div>
+    <% end %>
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
