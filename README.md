@@ -1,9 +1,7 @@
 # Sweet World
 ![](https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white) ![](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
 
-> This project is developed as part of the Microverse curriculum, to be more specific, is part of the capstone project using Ruby on Rails module.
->
-> It consists in a web application where users can create and vote for sweet recipes.
+> Web application where users can login, create and vote for sweet recipes.
 
 ## Index
 
